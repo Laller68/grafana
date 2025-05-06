@@ -791,10 +791,12 @@
             "datasource": {
               "uid": "$datasource"
             },
+            "editorMode": "code",
             "expr": "sum by (job, tripperware) (rate(cortex_cache_request_duration_seconds_count{job=~\"$job\"}[$__rate_interval]))",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "{{job}} {{tripperware}}",
+            "range": true,
             "refId": "A",
             "step": 10
           }
